@@ -1,5 +1,6 @@
 package com.example.lab2emt.service;
 
+import com.example.lab2emt.Dto.BookDto;
 import com.example.lab2emt.model.BookModel;
 import org.springframework.data.domain.Page;
 
@@ -15,13 +16,17 @@ public interface BookService {
 
     List<BookModel> findAllByName(Pageable pageable);
 
-    BookModel findById(Long id);
+    Optional<BookModel> findById(Long id);
 
     void deleteById (Long id);
 
     void refreshMaterializedView();
 
     Page<BookModel> findAllByName (String name, Pageable pageable);
+
+    Optional<BookModel> edit(Long id, BookDto bookDto);
+
+    Optional<BookModel> save(BookDto bookDto);
 
 
 

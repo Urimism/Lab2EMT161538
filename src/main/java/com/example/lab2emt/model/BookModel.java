@@ -3,6 +3,7 @@ package com.example.lab2emt.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -21,6 +22,15 @@ public class  BookModel {
     private Integer availableCopies;
 
     private String name;
+
+    private LocalDateTime dateCreated;
+
+    private LocalDateTime validUntil;
+
+    public BookModel(LocalDateTime validUntil) {
+        this.dateCreated = LocalDateTime.now();
+        this.validUntil = validUntil;
+    }
     public Long getId() {
         return id;
     }
