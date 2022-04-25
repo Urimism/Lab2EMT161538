@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS  TBL_BOOKMODELS;
+
+CREATE TABLE TBL_BOOKMODELS(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR (250),
+    category VARCHAR (250),
+    author VARCHAR (250),
+    availableCopies INT,
+
+);
